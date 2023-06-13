@@ -12,6 +12,17 @@ const baseConfig = {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+                options: {
+                    minimize: {
+                    //...defaultMinimizerOptions,
+                    removeComments: false,
+                    collapseWhitespace: false,
+                    }
+                }
+            }
         ],
     },
     resolve: {
@@ -19,7 +30,12 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, './dist'),
+    },
+    mode: 'development',
+    devServer: {
+      compress: true,
+      port: 3000
     },
     plugins: [
         new HtmlWebpackPlugin({
