@@ -1,5 +1,5 @@
-import App from './components/app/app.js';
+// import App from './components/app/app.js';
 import './global.css';
 
- const app = new App();
- app.start();
+// const app = new App();
+// app.start();
